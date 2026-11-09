@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f6f3ec">
+  <title>HubbuyCN spreadsheet – produktlänkar, storlek och QC</title>
+  <meta name="description" content="Svensk guide till HubbuyCN spreadsheet. Bläddra i tio kategorier, kontrollera produktlänkar och mått, tolka QC-bilder och jämför frakt till Sverige.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="sv_SE">
+  <meta property="og:title" content="HubbuyCN spreadsheet – produktlänkar, storlek och QC">
+  <meta property="og:description" content="Svensk guide till HubbuyCN spreadsheet. Bläddra i tio kategorier, kontrollera produktlänkar och mått, tolka QC-bilder och jämför frakt till Sverige.">
+  <meta property="og:image" content="https://static.nike.com/a/images/w_640,f_auto,q_auto/b7d9211c-26e7-431a-ac24-b0540fb3c00f/AIR+FORCE+1+%2707.png">
+  <meta property="og:image:alt" content="Vit Nike Air Force 1 ’07 sedd från sidan">
+  <link rel="preconnect" href="https://static.nike.com">
+  <!-- Redaktionsunderlag: Bing visade inga relevanta förstasidesresultat vid kontrollen.
+       Tio relevanta domäner granskades via alternativ webbsökning:
+       hubbuycn.cc (kategorier), spreadsheet-kakobuy.com (gamla länkar),
+       litbuysheetlinks.com (produkt-ID), hubbuycn.net (vanliga frågor),
+       hubbuy-cn.com (produktsidor), hubbuycnsheet.org (QC och frakt),
+       kindredflip.com (lagerbilder), hubbuycnspreadsheet.surf (kategorinavigering),
+       hubbuycnsheetu.com (valuta och frakt), hubbuycntable.com (variant och paketvikt).
+       Sökfraser: produktlänkar för HubbuyCN, storleksguide för HubbuyCN,
+       QC-bilder för HubbuyCN och frakt till Sverige. -->
+  <style>
+    :root{color-scheme:light;--bg:#f6f3ec;--ink:#251a36;--muted:#5d5364;--line:#cdc4d3;--paper:#fffdf8;--dark:#30203f;--violet:#dcd0f1;--lime:#e5f39f;--frame:73rem}
+    *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font:1rem/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    a{color:inherit;text-underline-offset:.2em}
+    :focus-visible{outline:3px solid #7354a2;outline-offset:4px}
+    img{display:block;max-width:100%}
+    figure,h1,h2,h3,p{margin:0}
+    ul,ol,dl{margin:0}
+    h1,h2,h3{line-height:1.12}
+    h1{font-size:clamp(2.55rem,7vw,5.6rem);letter-spacing:-.07em;overflow-wrap:anywhere}
+    h1 span{display:block}
+    h2{font-size:clamp(1.65rem,4vw,2.75rem);letter-spacing:-.035em}
+    h3{font-size:1.22rem;letter-spacing:-.015em}
+    .wrap{width:min(var(--frame),calc(100% - 2rem));margin-inline:auto}
+    .bar{display:flex;justify-content:space-between;align-items:center;gap:.75rem;flex-wrap:wrap;padding-block:.85rem;border-bottom:1px solid var(--line)}
+    .brand{font-weight:800}
+    .eyebrow{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800}
+    .bar .eyebrow,.muted{color:var(--muted)}
+    .hero{display:grid;grid-template-columns:1.18fr 1fr;margin-top:1rem;background:var(--dark);color:var(--paper)}
+    .hero-copy{padding:clamp(1.25rem,4vw,3.25rem);display:grid;align-content:center;justify-items:start;gap:1.15rem}
+    .hero-copy .eyebrow{color:var(--lime)}
+    .hero-copy p{max-width:37ch;color:#f0e8f7}
+    .button{display:inline-block;padding:.62rem .95rem;background:var(--lime);color:var(--ink);font-weight:800;text-decoration:none}
+    .button:hover{text-decoration:underline}
+    .hero-figure{display:grid;grid-template-rows:1fr auto;background:var(--violet);color:var(--ink);min-width:0}
+    .hero-figure img{width:100%;height:clamp(12.5rem,35vw,29rem);object-fit:contain}
+    .hero-figure figcaption{padding:.65rem 1rem;border-top:1px solid #b5a5ca;font-size:.85rem}
+    .block{margin-top:clamp(2rem,5vw,4rem)}
+    .section-head{display:grid;gap:.45rem;margin-bottom:1rem}
+    .section-head p{max-width:67ch;color:var(--muted)}
+    .categories{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;padding:1px;background:var(--line);list-style:none}
+    .categories a{min-height:3.35rem;display:flex;justify-content:space-between;align-items:center;gap:.35rem;padding:.6rem .75rem;background:var(--paper);text-decoration:none;font-weight:700;overflow-wrap:anywhere}
+    .categories a:hover{background:var(--violet);text-decoration:underline}
+    .categories span{color:#604783;flex:none}
+    .guides{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+    .guide{background:var(--paper);border-top:3px solid var(--dark);padding:clamp(1rem,3vw,1.55rem)}
+    .guide .eyebrow{color:#604783;margin-bottom:.45rem}
+    .guide p+p,.guide h3+p{margin-top:.65rem}
+    .notes{background:var(--violet);padding:clamp(1rem,3vw,1.6rem)}
+    .checklist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 1.5rem;padding-left:1.2rem}
+    .checklist li{padding:.5rem .15rem;border-bottom:1px solid #b9a9ce}
+    .gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+    .gallery figure{background:var(--paper);border:1px solid var(--line);min-width:0}
+    .gallery img{width:100%;height:auto;aspect-ratio:1;object-fit:contain;background:#efedf0}
+    .gallery figcaption{padding:.65rem .75rem;font-size:.88rem}
+    .gallery strong{display:block}
+    .faq{max-width:52rem}
+    details{border-top:1px solid var(--line);padding:.7rem 0}
+    details:last-child{border-bottom:1px solid var(--line)}
+    summary{cursor:pointer;font-weight:750}
+    details p{margin:.55rem 0 .2rem;max-width:68ch}
+    footer{margin-top:3rem;background:var(--dark);color:var(--paper)}
+    footer .wrap{display:grid;gap:.5rem;padding-block:1.4rem}
+    footer p{max-width:65ch;color:#f0e8f7}
+    @media(max-width:60rem){.categories{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    @media(max-width:44rem){.hero,.guides,.checklist{grid-template-columns:1fr}.gallery,.categories{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "name": "HubbuyCN spreadsheet – produktlänkar, storlek och QC",
+    "description": "Svensk guide till HubbuyCN spreadsheet. Bläddra i tio kategorier, kontrollera produktlänkar och mått, tolka QC-bilder och jämför frakt till Sverige.",
+    "inLanguage": "sv",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Vad är ett HubbuyCN spreadsheet?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Det är ett kalkylblad eller en webblista med produktlänkar. Använd det för att hitta och jämföra artiklar. Kontrollera aktuella varianter och villkor i säljarens annons."}
+      },
+      {
+        "@type": "Question",
+        "name": "Vad gör jag om en gammal HubbuyCN-länk inte fungerar?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Leta efter marknadsplatsens ursprungliga länk eller artikelnummer i raden. Om agentlänken innehåller parametern url kan originaladressen ligga där. Kontrollera säljare, modell och variant när du hittar annonsen."}
+      },
+      {
+        "@type": "Question",
+        "name": "Vad visar QC-bilder?",
+        "acceptedAnswer": {"@type": "Answer", "text": "QC-bilder kan visa synliga detaljer på varan som fotograferats, till exempel färg, sömmar och storleksetikett. För märkesvaror bör du kontrollera säljarens uppgifter och dokumentation om äkthet separat."}
+      },
+      {
+        "@type": "Question",
+        "name": "Hur jämför jag fraktkostnaden till Sverige?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Jämför alternativ för samma leveransadress och samma packade vikt och mått. Räkna med varupriset, eventuella avgifter och den aktuella fraktofferten när du jämför totalsumman."}
+      }
+    ]
+  }
+  </script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/ifwpo/">
+</head>
+<body>
+  <header class="wrap bar">
+    <a class="brand" href="https://www.hipobuyfind.com">www.hipobuyfind.com</a>
+    <span class="eyebrow">Svensk shoppingguide</span>
+  </header>
+  <main class="wrap">
+    <section class="hero" aria-labelledby="titel">
+      <div class="hero-copy">
+        <span class="eyebrow">Kategorier och köpguider</span>
+        <h1 id="titel">HubbuyCN <span>spreadsheet</span></h1>
+        <p>Hitta skor, kläder och accessoarer via HipobuyFind. Använd guiden för att kontrollera säljarens produktlänk, välja rätt storlek och bedöma lagerbilder innan du bestämmer dig.</p>
+        <a class="button" href="https://www.hipobuyfind.com">Öppna HipobuyFind <span aria-hidden="true">↗</span></a>
+      </div>
+      <figure class="hero-figure">
+        <img src="https://static.nike.com/a/images/w_640,f_auto,q_auto/b7d9211c-26e7-431a-ac24-b0540fb3c00f/AIR+FORCE+1+%2707.png"
+             srcset="https://static.nike.com/a/images/w_320,f_auto,q_auto/b7d9211c-26e7-431a-ac24-b0540fb3c00f/AIR+FORCE+1+%2707.png 320w, https://static.nike.com/a/images/w_640,f_auto,q_auto/b7d9211c-26e7-431a-ac24-b0540fb3c00f/AIR+FORCE+1+%2707.png 640w"
+             sizes="(max-width: 44rem) calc(100vw - 2rem), 32rem" width="640" height="800"
+             alt="Vit Nike Air Force 1 ’07 sedd från sidan" fetchpriority="high" loading="eager">
+        <figcaption>Bildreferens · Nike Air Force 1 ’07 i vitt</figcaption>
+      </figure>
+    </section>
+
+    <nav class="block" aria-labelledby="kategorier">
+      <div class="section-head">
+        <h2 id="kategorier">Välj produktkategori</h2>
+        <p>Varje kategori öppnas på HipobuyFind.</p>
+      </div>
+      <ul class="categories">
+        <li><a href="https://hipobuyfind.com/category-911-Shoes.html">Skor <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-912-Hoodies%2FSweaters.html">Hoodies och tröjor <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-913-T-Shirts.html">T-shirts <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-914-Jackets.html">Jackor <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-915-Pants%2FShorts.html">Byxor och shorts <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-916-Headwear.html">Huvudbonader <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-917-Sets.html">Klädset <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-918-underwear%2Funderpants.html">Underkläder <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-919-Jersey.html">Matchtröjor <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-920-Accessories.html">Accessoarer <span aria-hidden="true">↗</span></a></li>
+      </ul>
+    </nav>
+
+    <section class="block" aria-labelledby="guider">
+      <div class="section-head">
+        <span class="eyebrow">Köpguider</span>
+        <h2 id="guider">Från produktlänk till köpbeslut</h2>
+      </div>
+      <div class="guides">
+        <article class="guide">
+          <p class="eyebrow">01 · Annonsen</p>
+          <h3>Produktlänkar för HubbuyCN</h3>
+          <p>En rad kan leda till en agent eller direkt till en annons på Weidian, Taobao eller 1688. Spara originaladressen och artikelnumret när de finns. Det gör det lättare att hitta samma annons om agentens länk slutar fungera.</p>
+          <p>Jämför säljarens namn, modellkod och färgvariant innan du går vidare. Öppna variantväljaren och kontrollera lagersaldot för just den storlek du vill ha.</p>
+        </article>
+        <article class="guide">
+          <p class="eyebrow">02 · Passformen</p>
+          <h3>Storleksguide för HubbuyCN</h3>
+          <p>Utgå från säljarens storlekstabell i centimeter. Lägg en tröja som sitter bra plant och mät bröstbredd, axelbredd och rygglängd. Kontrollera om tabellen anger plaggets plana bredd eller kroppens omkrets.</p>
+          <p>För sneakers kan du mäta båda fötterna från häl till längsta tå och jämföra den längre foten med säljarens storlekstabell. En uppgiven innersulelängd behöver tolkas enligt säljarens mätmetod.</p>
+        </article>
+        <article class="guide">
+          <p class="eyebrow">03 · Bildkontrollen</p>
+          <h3>QC-bilder för HubbuyCN</h3>
+          <p>QC står för kvalitetskontroll. Börja med en helbild av varan och jämför den med din valda variant. Använd sedan närbilder av sömmar, dragkedja, storleksetikett eller sulmönster för att kontrollera enskilda detaljer.</p>
+          <p>Om färgen är svår att bedöma i lagerbelysningen kan du be om en bild i jämnt ljus. För märkesvaror behöver du även kontrollera säljarens dokumentation om äkthet.</p>
+        </article>
+        <article class="guide">
+          <p class="eyebrow">04 · Leveransen</p>
+          <h3>Frakt till Sverige</h3>
+          <p>Jämför totalpriset i kronor för samma leveransadress. Ta med produktpris, eventuell inrikesfrakt, agentavgift och den aktuella offerten för internationell frakt. Kontrollera om skatt eller hanteringsavgifter ingår i beloppet.</p>
+          <p>Be om packad vikt och yttermått om du jämför fraktlinjer. Fraktören kan använda volymvikt för skrymmande paket, exempelvis när en skokartong ligger kvar i försändelsen.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="block notes" aria-labelledby="matt">
+      <div class="section-head">
+        <h2 id="matt">Detaljer att kontrollera per plagg</h2>
+      </div>
+      <ul class="checklist">
+        <li><strong>Hoodie:</strong> Jämför bröstbredd, ärmlängd och muddarnas bredd.</li>
+        <li><strong>T-shirt:</strong> Läs materialsammansättningen och jämför kragens öppning.</li>
+        <li><strong>Jacka:</strong> Kontrollera foder, stängning och plats för mellanlager.</li>
+        <li><strong>Byxor och shorts:</strong> Mät midjevidd, benöppning och innerbenslängd.</li>
+        <li><strong>Keps:</strong> Jämför huvudomkretsen med spännets justerbara intervall.</li>
+        <li><strong>Klädset och matchtröjor:</strong> Kontrollera delarnas storlekar och var trycket sitter.</li>
+        <li><strong>Underkläder:</strong> Kontrollera midjebandets mått och villkoren för retur.</li>
+        <li><strong>Armband:</strong> Jämför armbandets inneromkrets med ditt handledsmått.</li>
+      </ul>
+    </section>
+
+    <section class="block" aria-labelledby="bildguide">
+      <div class="section-head">
+        <h2 id="bildguide">Fyra detaljer att leta efter på produktbilder</h2>
+        <p>Modellerna är bildreferenser för passform och detaljer. Kontrollera aktuellt sortiment på HipobuyFind.</p>
+      </div>
+      <div class="gallery">
+        <figure>
+          <img src="https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1780047906/875733_3HBMC_1060_001_100_0000_Light-gg-cotton-canvas-baseball-hat.jpg"
+               width="490" height="490" alt="Svart Gucci-keps med rundad skärm och diskret GG-mönster" loading="lazy" decoding="async">
+          <figcaption><strong>Gucci</strong> Se hur skärmen är böjd och be om en bild av spännet.</figcaption>
+        </figure>
+        <figure>
+          <img src="https://us.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-embossed-lv-t-shirt--HNY55WDT3000_PM2_Front%20view.jpg?wid=360&amp;hei=360"
+               width="360" height="360" alt="Vit Louis Vuitton T-shirt med rund hals, sedd framifrån" loading="lazy" decoding="async">
+          <figcaption><strong>Louis Vuitton</strong> Jämför halsringningen och var axelsömmen sitter.</figcaption>
+        </figure>
+        <figure>
+          <img src="https://assets.christiandior.com/is/image/diorprod/643T13A4783X5700_E01?$default_GH$=&amp;crop=487,166,1027,1439&amp;wid=370&amp;hei=400&amp;scale=0.175&amp;extend=0,0,0,50"
+               width="370" height="400" alt="Marinblå Dior T-shirt med ljust motiv, på galge" loading="lazy" decoding="async">
+          <figcaption><strong>Dior</strong> Kontrollera motivets placering och längden på ärmarna.</figcaption>
+        </figure>
+        <figure>
+          <img src="https://assets.hermes.com/is/image/hermesproduct/700001FP8A_front_wm_101?wid=320&amp;hei=400&amp;fit=fit&amp;$product_default_bg$="
+               width="320" height="400" alt="Orange Hermès Clic H-armband med silverfärgat H-spänne" loading="lazy" decoding="async">
+          <figcaption><strong>Hermès</strong> Titta på låset och be om armbandets invändiga mått.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="block faq" aria-labelledby="fragor">
+      <div class="section-head"><h2 id="fragor">Vanliga frågor</h2></div>
+      <details open>
+        <summary>Vad är ett HubbuyCN spreadsheet?</summary>
+        <p>Det är ett kalkylblad eller en webblista med produktlänkar. Använd det för att hitta och jämföra artiklar. Kontrollera aktuella varianter och villkor i säljarens annons.</p>
+      </details>
+      <details>
+        <summary>Vad gör jag om en gammal HubbuyCN-länk inte fungerar?</summary>
+        <p>Leta efter marknadsplatsens ursprungliga länk eller artikelnummer i raden. Om agentlänken innehåller parametern url kan originaladressen ligga där. Kontrollera säljare, modell och variant när du hittar annonsen.</p>
+      </details>
+      <details>
+        <summary>Vad visar QC-bilder?</summary>
+        <p>QC-bilder kan visa synliga detaljer på varan som fotograferats, till exempel färg, sömmar och storleksetikett. För märkesvaror bör du kontrollera säljarens uppgifter och dokumentation om äkthet separat.</p>
+      </details>
+      <details>
+        <summary>Hur jämför jag fraktkostnaden till Sverige?</summary>
+        <p>Jämför alternativ för samma leveransadress och samma packade vikt och mått. Räkna med varupriset, eventuella avgifter och den aktuella fraktofferten när du jämför totalsumman.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <a class="brand" href="https://www.hipobuyfind.com">www.hipobuyfind.com</a>
+      <p>Fristående shoppingguide. Varumärkena anges för att identifiera modellerna på referensbilderna.</p>
+    </div>
+  </footer>
+</body>
+</html>
